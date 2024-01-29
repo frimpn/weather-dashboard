@@ -15,17 +15,29 @@ fetch(apiUrl)
     return response.json()
   })
   .then(function(data){
-    console.log(data)
+    console.log(data.name)
     let temp =  data.main.temp
     let celisus = Math.floor(temp -  273.15)
-    console.log(temp)
-    
-
     let humidity = data.main.humidity
-    console.log(humidity)
-    let wind = data.wind.speed
-    console.log(wind)
+     let wind = data.wind.speed
+  let name = data.name
+  let Cityname = $('<h1>').text(`${name} (${dayjs().format('DD/MM/YYYY')})`)
+  let cityTemp = $('<p>').text(`Temp: ${celisus}°C `)
+  let cityWind = $('<p>').text(`Wind: ${wind} KPH`)
+  let cityHumitidy = $('<p>').text(`Humidity: ${humidity}%`)
+
+  $('#today').append(Cityname)
+  $('#today').append(cityTemp)
+  $('#today').append(cityWind)
+  $('#today').append(cityHumitidy)
+
+  
+
 
   })
 
+
+
+
 }
+
