@@ -27,7 +27,8 @@ function makeBtn(btn){
  
  $('.cityBtn').each(function(){
   let city = $(this).attr('data-city')
-  localStorage.setItem(JSON.stringify(city),JSON.stringify(city))
+  localStorage.setItem(city,city)
+  console.log(localStorage.getItem(city))
  })
 
  
@@ -39,7 +40,8 @@ function makeBtn(btn){
   
     clear()
     searchAgain(cityName)
-    console.log(localStorage.getItem(JSON.stringify(cityName)))
+    //console.log(localStorage.getItem(cityName))
+
 
 
   })
