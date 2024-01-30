@@ -4,10 +4,40 @@ let btn = $('#search-button')
 
 btn.on('click', searchCity)
 
+function makeBtn(btn){
+
+  let button = []
+
+  button.push(btn)
+
+  for(let i = 0; i  < btn.length; i++){
+  let create =  $('<button>')
+
+  create.text(button[i])
+  create.addClass('btn')
+  $('#history').append(create)
+
+
+  }
+
+  button = []
+
+  
+
+
+
+
+}
+
+$('#history').on('click','.btn',showHistory)
+
+
 
 function searchCity(event){
     event.preventDefault()
+    
     let weatherSearch = $('#search-input').val()
+    makeBtn(weatherSearch)
 console.log(weatherSearch)
 let apiUrl =  `https://api.openweathermap.org/data/2.5/weather?q=${weatherSearch}&appid=7c8d3234ce864a983dd34685b2d8e1da`
 
