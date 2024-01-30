@@ -1,0 +1,24 @@
+#today{
+    border: 2px solid black;
+}
+
+#forecast > div{
+
+color: white;
+background-color: black;
+margin: 5px;
+width:200px;
+height: 200px;
+}
+
+.cityBtn{
+    background-color: grey;
+    border-radius: 50px;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.cityBtn:hover{
+    background-color: aqua;
+}

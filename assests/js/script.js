@@ -16,11 +16,22 @@ function makeBtn(btn){
   let create =  $('<button>')
 
   create.text(btn)
-  create.addClass('btn')
+  create.addClass('cityBtn')
   create.attr('data-city', btn)
   $('#history').append(create)
 
+
   
+
+    
+ 
+ $('.cityBtn').each(function(){
+  let city = $(this).attr('data-city')
+  localStorage.setItem(JSON.stringify(city),JSON.stringify(city))
+ })
+
+ 
+    
 
 
   $('#history').on('click','.btn',function(event){
@@ -28,10 +39,16 @@ function makeBtn(btn){
   
     clear()
     searchAgain(cityName)
+    console.log(localStorage.getItem(JSON.stringify(cityName)))
+
 
   })
 
+  
+  
+
 }
+  
 
 
 
@@ -168,9 +185,9 @@ nextDays(lat,lon)
     date.text(differentDays[i].dt_txt)
     
     let temp = $('<p>')
-    temp.text(Math.floor(differentDays[i].main.temp - 273.15)+'°C')
+    temp.text(`Temp: ${Math.floor(differentDays[i].main.temp - 273.15)}°C`)
     let hum = $('<p>')
-    hum.text(differentDays[i].main.humidity+'%')
+    hum.text(`Humidity: ${differentDays[i].main.humidity}`)
 
     panels.append(date)
     panels.append(temp)
