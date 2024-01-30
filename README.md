@@ -2,6 +2,8 @@
 
 ## Description 
 
+page link : https://frimpn.github.io/weather-dashboard/
+
 In this task i created a weather dashboard that when you use the search input and type in a city of your choice you can see the current weather and the weather for the next five days. 
 
 1. i started by using jquery to access the DOM of input so that i could gain access to the value that was written in.
